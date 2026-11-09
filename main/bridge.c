@@ -233,6 +233,9 @@ void bridge_start(void) {
         .io_cfg.rx           = BOARD_TWAI_RX_GPIO,
         .bit_timing.bitrate  = LCC_BITRATE,
         .tx_queue_depth      = 16,
+
+        .io_cfg.quanta_clk_out = GPIO_NUM_NC,        
+        .io_cfg.bus_off_indicator = GPIO_NUM_NC,
     };
 #ifdef LCC_SELFTEST
     cfg.flags.enable_self_test = true;   // TX completes without an ACK (no 2nd node)
